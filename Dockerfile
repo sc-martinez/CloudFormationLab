@@ -2,8 +2,7 @@ FROM debian:9.3-slim
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-RUN apt-get update \
-    && apt-get install -y curl
+RUN apt-get update && apt-get install -y curl
 
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 8.9.4

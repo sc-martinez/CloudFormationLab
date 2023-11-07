@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Docker simple webserver</title>
+    <title>Web Server Homepage</title>
 </head>
 <body>
-    <h1>Hi, it docker-simple-webserver project</h1>
+    <h1>Welcome to My Web Server</h1>
+    <p>Origin IP: <strong><?php echo $_SERVER['SERVER_ADDR']; ?></strong></p>
+    <p>Port: <strong><?php echo $_SERVER['SERVER_PORT']; ?></strong></p>
+    <p>Message: <strong>Web Server running</strong></p>
+    <img src="https://example.com/cool-image.jpg" alt="Cool Image">
 </body>
 </html>
