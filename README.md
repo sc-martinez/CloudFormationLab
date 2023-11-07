@@ -1,6 +1,5 @@
 # WEB APP AUTOMATICALLY DEPLOYED TO AWS
 
-
 ## Built docker image
 ```sh
 $ docker build -t webserver .
