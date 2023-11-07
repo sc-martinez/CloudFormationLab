@@ -1,19 +1,3 @@
-# WEB APP AUTOMATICALLY DEPLOYED TO AWS
-
-
-## Built docker image
-```sh
-$ docker build -t webserver .
-```
-
-## Run
-```sh
-$ docker run -d -p 80:80 webserver
-```
-
-## Dokerfile
-
-```dockerfile
 FROM debian:9.3-slim
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
@@ -43,6 +27,3 @@ WORKDIR /var/www/html
 EXPOSE 80
 
 CMD node webserver.js
-```
-
- 
