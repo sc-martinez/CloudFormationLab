@@ -1,28 +1,20 @@
-FROM debian:9.3-slim
+# Fetching the minified node image on apline linux
+FROM node:slim
 
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+# Declaring env
+ENV NODE_ENV development
 
-RUN apt-get update && apt-get install -y curl
+# Setting up the work directory
+WORKDIR /express-docker
 
-ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 8.9.4
+# Copying all the files in our project
+COPY . .
 
-RUN curl --silent -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.2/install.sh | bash
+# Installing dependencies
+RUN npm install
 
-RUN source ~/.bashrc && nvm install $NODE_VERSION && nvm alias default $NODE_VERSION && nvm use default
+# Starting our application
+CMD [ "node", "webserver.js" ]
 
-ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
-ENV PATH $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
-
-RUN node -v
-RUN npm -v
-
-RUN npm install express
-
-COPY . /var/www/html
-
-WORKDIR /var/www/html
-
+# Exposing server port
 EXPOSE 80
-
-CMD node webserver.js

@@ -3,7 +3,7 @@ Parameters:
   DockerURL:
     Description: ' The DockerHub image URL'
     Type: String
-    Default: nginxdemos/hello
+    Default: dockerhubimagerepository/image:tagname
     
   InstanceType:
     Description: WebServer EC2 instance type
