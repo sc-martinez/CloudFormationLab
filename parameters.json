@@ -1,0 +1,30 @@
+[
+    {
+        "ParameterKey": "DockerURL",
+        "ParameterValue": "alieninstinct/minimalnodewebserver:latest"
+    },
+    {
+        "ParameterKey": "InstanceType",
+        "ParameterValue": "t2.small"
+    },
+    {
+        "ParameterKey": "SSHLocation",
+        "ParameterValue": "0.0.0.0/0"
+    },
+    {
+        "ParameterKey": "NumberOfInstances",
+        "ParameterValue": "5"
+    },
+    {
+        "ParameterKey": "VpcId",
+        "ParameterValue": "vpc-0941706157d810b52"
+    },
+    {
+        "ParameterKey": "Subnets",
+        "ParameterValue": "subnet-0d7387526a5111c9b,subnet-09d1b33fcc3d47dbe"
+    },
+    {
+        "ParameterKey": "KeyName",
+        "ParameterValue": "MyKeyPair"
+    }
+]

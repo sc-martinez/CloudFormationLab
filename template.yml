@@ -3,7 +3,7 @@ Parameters:
   DockerURL:
     Description: ' The DockerHub image URL'
     Type: String
-    Default: dockerhubimagerepository/image:tagname
+    Default: alieninstinct/minimalnodewebserver:tagname
     
   InstanceType:
     Description: WebServer EC2 instance type
@@ -443,11 +443,7 @@ Resources:
           - IpProtocol: tcp
             FromPort: '80'
             ToPort: '80'
-            SourceSecurityGroupId: !Select 
-              - 0
-              - !GetAtt 
-                - ApplicationLoadBalancer
-                - SecurityGroups
+            CidrIp: !Ref SSHLocation
           - IpProtocol: tcp
             FromPort: '22'
             ToPort: '22'
